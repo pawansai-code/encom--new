@@ -2,9 +2,9 @@ import { Button } from "@chakra-ui/button";
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
 import { VStack } from "@chakra-ui/layout";
-import { useState } from "react";
-import axios from "axios";
 import { useToast } from "@chakra-ui/react";
+import axios from "axios";
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { ChatState } from "../../Context/ChatProvider";
 
@@ -43,7 +43,7 @@ const Login = () => {
       const { data } = await axios.post(
         "/api/user/login",
         { email, password },
-        config
+        config,
       );
 
       toast({
@@ -77,6 +77,8 @@ const Login = () => {
         <Input
           value={email}
           type="email"
+          bg="#0d1117"
+          color="white"
           placeholder="Enter Your Email Address"
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -87,6 +89,8 @@ const Login = () => {
           <Input
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            bg="#0d1117"
+            color="white"
             type={show ? "text" : "password"}
             placeholder="Enter password"
           />

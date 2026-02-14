@@ -1,17 +1,17 @@
 import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
+  Box,
   Button,
-  useDisclosure,
   FormControl,
   Input,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  useDisclosure,
   useToast,
-  Box,
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useState } from "react";
@@ -102,7 +102,7 @@ const GroupChatModal = ({ children }) => {
           name: groupChatName,
           users: JSON.stringify(selectedUsers.map((u) => u._id)),
         },
-        config
+        config,
       );
       setChats([data, ...chats]);
       onClose();
@@ -131,7 +131,7 @@ const GroupChatModal = ({ children }) => {
 
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent bg="#161b22" color="white">
           <ModalHeader
             fontSize="35px"
             fontFamily="Work sans"
@@ -146,6 +146,8 @@ const GroupChatModal = ({ children }) => {
               <Input
                 placeholder="Chat Name"
                 mb={3}
+                bg="#0d1117"
+                color="white"
                 onChange={(e) => setGroupChatName(e.target.value)}
               />
             </FormControl>
@@ -153,6 +155,8 @@ const GroupChatModal = ({ children }) => {
               <Input
                 placeholder="Add Users eg: John, Piyush, Jane"
                 mb={1}
+                bg="#0d1117"
+                color="white"
                 onChange={(e) => handleSearch(e.target.value)}
               />
             </FormControl>

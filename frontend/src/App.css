@@ -3,9 +3,8 @@
 .App {
   min-height: 100vh;
   display: flex;
-  background-image: url("./background.png");
-  background-position: center;
-  background-size: cover;
+  background-color: #0d1117; /* Dark background similar to GitHub dark mode or Encom style */
+  color: #c9d1d9; /* Light text for contrast */
 }
 
 ::-webkit-scrollbar {

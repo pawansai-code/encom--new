@@ -28,21 +28,36 @@ function Homepage() {
         d="flex"
         justifyContent="center"
         p={3}
-        bg="white"
+        bgGradient="linear(to-r, #1A202C, #2D3748)" // Gradient background
         w="100%"
         m="40px 0 15px 0"
         borderRadius="lg"
         borderWidth="1px"
+        boxShadow="xl"
       >
-        <Text fontSize="4xl" fontFamily="Work sans">
-          Talk-A-Tive
+        <Text
+          fontSize="4xl"
+          fontFamily="Work sans"
+          bgGradient="linear(to-l, #7928CA, #FF0080)"
+          bgClip="text"
+          fontWeight="bold"
+        >
+          EnChat
         </Text>
       </Box>
-      <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
-        <Tabs isFitted variant="soft-rounded">
+      <Box
+        bgGradient="linear(to-r, #1A202C, #2D3748)" // Gradient background
+        w="100%"
+        p={4}
+        borderRadius="lg"
+        borderWidth="1px"
+        color="white"
+        boxShadow="2xl"
+      >
+        <Tabs isFitted variant="soft-rounded" colorScheme="purple">
           <TabList mb="1em">
-            <Tab>Login</Tab>
-            <Tab>Sign Up</Tab>
+            <Tab _selected={{ color: "white", bg: "purple.500" }}>Login</Tab>
+            <Tab _selected={{ color: "white", bg: "pink.500" }}>Sign Up</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>

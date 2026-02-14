@@ -58,7 +58,7 @@ const Signup = () => {
           password,
           pic,
         },
-        config
+        config,
       );
       console.log(data);
       toast({
@@ -135,6 +135,8 @@ const Signup = () => {
         <FormLabel>Name</FormLabel>
         <Input
           placeholder="Enter Your Name"
+          bg="#0d1117"
+          color="white"
           onChange={(e) => setName(e.target.value)}
         />
       </FormControl>
@@ -143,6 +145,8 @@ const Signup = () => {
         <Input
           type="email"
           placeholder="Enter Your Email Address"
+          bg="#0d1117"
+          color="white"
           onChange={(e) => setEmail(e.target.value)}
         />
       </FormControl>
@@ -151,6 +155,8 @@ const Signup = () => {
         <InputGroup size="md">
           <Input
             type={show ? "text" : "password"}
+            bg="#0d1117"
+            color="white"
             placeholder="Enter Password"
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -166,6 +172,8 @@ const Signup = () => {
         <InputGroup size="md">
           <Input
             type={show ? "text" : "password"}
+            bg="#0d1117"
+            color="white"
             placeholder="Confirm password"
             onChange={(e) => setConfirmpassword(e.target.value)}
           />

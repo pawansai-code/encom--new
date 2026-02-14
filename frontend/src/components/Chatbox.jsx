@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/layout";
-import "./styles.css";
-import SingleChat from "./SingleChat";
 import { ChatState } from "../Context/ChatProvider";
+import SingleChat from "./SingleChat";
+import "./styles.css";
 
 const Chatbox = ({ fetchAgain, setFetchAgain }) => {
   const { selectedChat } = ChatState();
@@ -12,10 +12,12 @@ const Chatbox = ({ fetchAgain, setFetchAgain }) => {
       alignItems="center"
       flexDir="column"
       p={3}
-      bg="white"
+      bgGradient="linear(to-b, #1A202C, #2D3748)" // Gradient background
       w={{ base: "100%", md: "68%" }}
       borderRadius="lg"
       borderWidth="1px"
+      borderColor="#4A5568"
+      color="white"
     >
       <SingleChat fetchAgain={fetchAgain} setFetchAgain={setFetchAgain} />
     </Box>

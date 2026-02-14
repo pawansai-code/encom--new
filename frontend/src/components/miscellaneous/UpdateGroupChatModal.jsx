@@ -1,20 +1,20 @@
 import { ViewIcon } from "@chakra-ui/icons";
 import {
+  Box,
+  Button,
+  FormControl,
+  IconButton,
+  Input,
   Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
-  Button,
-  useDisclosure,
-  FormControl,
-  Input,
-  useToast,
-  Box,
-  IconButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
   Spinner,
+  useDisclosure,
+  useToast,
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useState } from "react";
@@ -79,7 +79,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
           chatId: selectedChat._id,
           chatName: groupChatName,
         },
-        config
+        config,
       );
 
       console.log(data._id);
@@ -137,7 +137,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
           chatId: selectedChat._id,
           userId: user1._id,
         },
-        config
+        config,
       );
 
       setSelectedChat(data);
@@ -182,7 +182,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
           chatId: selectedChat._id,
           userId: user1._id,
         },
-        config
+        config,
       );
 
       user1._id === user._id ? setSelectedChat() : setSelectedChat(data);
@@ -209,7 +209,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
 
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent bg="#161b22" color="white">
           <ModalHeader
             fontSize="35px"
             fontFamily="Work sans"
@@ -236,6 +236,8 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
                 placeholder="Chat Name"
                 mb={3}
                 value={groupChatName}
+                bg="#0d1117"
+                color="white"
                 onChange={(e) => setGroupChatName(e.target.value)}
               />
               <Button
@@ -252,6 +254,8 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
               <Input
                 placeholder="Add User to group"
                 mb={1}
+                bg="#0d1117"
+                color="white"
                 onChange={(e) => handleSearch(e.target.value)}
               />
             </FormControl>

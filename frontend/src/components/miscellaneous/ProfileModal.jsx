@@ -1,17 +1,17 @@
 import { ViewIcon } from "@chakra-ui/icons";
 import {
+  Button,
+  IconButton,
+  Image,
   Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
-  Button,
-  useDisclosure,
-  IconButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
   Text,
-  Image,
+  useDisclosure,
 } from "@chakra-ui/react";
 
 const ProfileModal = ({ user, children }) => {
@@ -26,7 +26,7 @@ const ProfileModal = ({ user, children }) => {
       )}
       <Modal size="lg" onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
-        <ModalContent h="410px">
+        <ModalContent h="410px" bg="#161b22" color="white">
           <ModalHeader
             fontSize="40px"
             fontFamily="Work sans"

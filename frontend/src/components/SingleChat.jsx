@@ -1,20 +1,20 @@
 import { FormControl } from "@chakra-ui/form-control";
+import { ArrowBackIcon } from "@chakra-ui/icons";
 import { Input } from "@chakra-ui/input";
 import { Box, Text } from "@chakra-ui/layout";
-import "./styles.css";
 import { IconButton, Spinner, useToast } from "@chakra-ui/react";
-import { getSender, getSenderFull } from "../config/ChatLogics";
-import { useEffect, useState } from "react";
 import axios from "axios";
-import { ArrowBackIcon } from "@chakra-ui/icons";
-import ProfileModal from "./miscellaneous/ProfileModal";
-import ScrollableChat from "./ScrollableChat";
+import { useEffect, useState } from "react";
 import Lottie from "react-lottie";
 import animationData from "../animations/typing.json";
+import { getSender, getSenderFull } from "../config/ChatLogics";
+import ProfileModal from "./miscellaneous/ProfileModal";
+import ScrollableChat from "./ScrollableChat";
+import "./styles.css";
 
 import io from "socket.io-client";
-import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 import { ChatState } from "../Context/ChatProvider";
+import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 const ENDPOINT = "http://localhost:5000"; // "https://talk-a-tive.herokuapp.com"; -> After deployment
 var socket, selectedChatCompare;
 
@@ -52,7 +52,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
 
       const { data } = await axios.get(
         `/api/message/${selectedChat._id}`,
-        config
+        config,
       );
       setMessages(data);
       setLoading(false);
@@ -87,7 +87,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             content: newMessage,
             chatId: selectedChat,
           },
-          config
+          config,
         );
         socket.emit("new message", data);
         setMessages([...messages, data]);
@@ -176,6 +176,9 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
               d={{ base: "flex", md: "none" }}
               icon={<ArrowBackIcon />}
               onClick={() => setSelectedChat("")}
+              color="white"
+              variant="ghost"
+              _hover={{ bg: "whiteAlpha.200" }}
             />
             {messages &&
               (!selectedChat.isGroupChat ? (
@@ -201,11 +204,9 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             flexDir="column"
             justifyContent="flex-end"
             p={3}
-            bg="#E8E8E8"
-            w="100%"
+            bgGradient="linear(to-b, #1A202C, #2D3748)" // Gradient background
             h="100%"
             borderRadius="lg"
-            overflowY="hidden"
           >
             {loading ? (
               <Spinner
@@ -241,8 +242,14 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
               )}
               <Input
                 variant="filled"
-                bg="#E0E0E0"
+                bg="#2D3748"
+                color="white"
                 placeholder="Enter a message.."
+                _placeholder={{ color: "gray.400" }}
+                border="1px solid"
+                borderColor="gray.600"
+                _hover={{ borderColor: "teal.400" }}
+                _focus={{ borderColor: "teal.400", bg: "#1A202C" }}
                 value={newMessage}
                 onChange={typingHandler}
               />
