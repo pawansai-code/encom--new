@@ -37,7 +37,7 @@ const HomeNavbar = () => {
             name: 'Community', 
             type: 'dropdown',
             items: [
-                { name: 'Community', id: 'features', type: 'scroll' },
+                { name: 'Community Chat', path: '/community', type: 'route' },
                 { name: 'Journal', path: '/journal', type: 'route' }
             ]
         },

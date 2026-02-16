@@ -24,6 +24,7 @@ import ToolView from './Pages/Tools/ToolView';
 
 // Features
 import ChatbotPage from './Pages/Chatbot/ChatbotPage';
+import Community from './Pages/Community/Community';
 import NotFoundPage from './Pages/NotFound/NotFoundPage';
 
 // Auth
@@ -106,6 +107,7 @@ function App() {
             <Route path="/funzone" element={<FunzoneHub />} />
             <Route path="/funzone/:gameId" element={<GameView />} />
             <Route path="/chatbot" element={<ChatbotPage />} />
+            <Route path="/community/*" element={<Community />} />
             <Route path="/journal" element={<JournalHub />} />
 
             <Route path="/hub/contact" element={<ContactUs />} />

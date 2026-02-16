@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+.App-Chat-Container .App {
+  min-height: 100vh;
+  display: flex;
+  background-color: transparent;
+  color: #c9d1d9;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
