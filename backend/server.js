@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const connectDB = require("./config/db");
 const dotenv = require("dotenv");
 const userRoutes = require("./routes/userRoutes");
@@ -11,6 +12,7 @@ dotenv.config();
 connectDB();
 const app = express();
 
+app.use(cors()); // Enable CORS for all origins (or you can specify { origin: "http://localhost:5173" })
 app.use(express.json()); // to accept json data
 
 // app.get("/", (req, res) => {
@@ -53,7 +55,7 @@ const server = app.listen(
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "http://localhost:3000",
+    origin: "http://localhost:5173",
     // credentials: true,
   },
 });
