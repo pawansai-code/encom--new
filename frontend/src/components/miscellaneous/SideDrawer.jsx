@@ -21,12 +21,12 @@ import {
 import { Spinner } from "@chakra-ui/spinner";
 import { useToast } from "@chakra-ui/toast";
 import { Tooltip } from "@chakra-ui/tooltip";
-import axios from "axios";
 import { useState } from "react";
 import NotificationBadge, { Effect } from "react-notification-badge";
 import { useHistory } from "react-router-dom";
 import { getSender } from "../../config/ChatLogics";
 import { ChatState } from "../../Context/ChatProvider";
+import axios from "../../utils/axiosMy";
 import ChatLoading from "../ChatLoading";
 import UserListItem from "../userAvatar/UserListItem";
 import ProfileModal from "./ProfileModal";

@@ -3,11 +3,11 @@ import { ArrowBackIcon } from "@chakra-ui/icons";
 import { Input } from "@chakra-ui/input";
 import { Box, Text } from "@chakra-ui/layout";
 import { IconButton, Spinner, useToast } from "@chakra-ui/react";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import Lottie from "react-lottie";
 import animationData from "../animations/typing.json";
 import { getSender, getSenderFull } from "../config/ChatLogics";
+import axios from "../utils/axiosMy";
 import ProfileModal from "./miscellaneous/ProfileModal";
 import ScrollableChat from "./ScrollableChat";
 import "./styles.css";
@@ -15,7 +15,7 @@ import "./styles.css";
 import io from "socket.io-client";
 import { ChatState } from "../Context/ChatProvider";
 import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
-const ENDPOINT = ""; // "https://talk-a-tive.herokuapp.com"; -> After deployment
+const ENDPOINT = import.meta.env.VITE_API_URL || "http://localhost:5001";
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {

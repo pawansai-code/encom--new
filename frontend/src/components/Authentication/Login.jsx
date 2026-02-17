@@ -3,10 +3,10 @@ import { FormControl, FormLabel } from "@chakra-ui/form-control";
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
 import { VStack } from "@chakra-ui/layout";
 import { useToast } from "@chakra-ui/react";
-import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { ChatState } from "../../Context/ChatProvider";
+import axios from "../../utils/axiosMy";
 
 const Login = () => {
   const [show, setShow] = useState(false);
